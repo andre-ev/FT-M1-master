@@ -34,11 +34,8 @@ newList.add(15);
 console.log(newList);
 newList.add(75);
 console.log(newList);
-newList.add(105);
-console.log(newList);
-newList.add(115);
-console.log(newList);
-newList.add(1115);
+console.log(newList.head.next.next);
 
-
-console.log(newList);
+for (word of 'Lostacli') {
+    console.log(word);
+}

@@ -11,13 +11,70 @@
 // search: Busca un valor dentro de la lista. Puede recibir un valor o una función. Si no hubiera resultados, devuelve null.
 
 function LinkedList() {
-
+  this.head = null;
+  this.size = 0;
 }
 
 function Node(value){
-
+  this.value = value;
+  this.next = null;
 }
 
+LinkedList.prototype.add = function (arg) {
+  const newNode = new Node(arg);
+  let current = this.head;
+
+  if (!current) {
+    this.head = newNode;
+    this.size++;
+    return newNode;
+  }
+
+  while (current.next) {
+    current = current.next;
+  }
+
+  current.next = newNode;
+  this.size++;
+};
+
+LinkedList.prototype.remove = function () {
+  let current = this.head;
+
+  while (current.next) {
+
+    if(!current.next.next) {
+      let oldCurrent = current.next;
+      current.next = null;
+      this.size--;
+      return oldCurrent.value;
+    }
+
+    current = current.next;
+  }
+
+  this.size--;
+  current = null;
+  return current;
+};
+
+LinkedList.prototype.search = function () {
+  
+};
+/*
+var linkedList = new LinkedList();
+linkedList.add('first');
+
+linkedList.add('second');
+
+linkedList.add('3');
+
+linkedList.add('4');
+
+linkedList.add('5');
+
+linkedList.add('6');
+*/
 // Hash Table( ver información en: https://es.wikipedia.org/wiki/Tabla_hash)
 // Una Hash table contiene un arreglo de "contenedores" o buckets donde puede guardar información.
 // Para este ejercicio, generar 35 buckets para la Hash Table, y realizar los métodos, get, hasKey
