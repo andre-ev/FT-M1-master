@@ -69,42 +69,50 @@ LinkedList.prototype.search = function (arg) {
     return null;
   } 
   
-  while (current) {
+  while (current.next) {
+
     if (typeof arg === 'function') {
+
       if (arg(current.value)) return current.value;
       else current = current.next;
+
     } else if (arg === current.value) {
+
       return current.value;
+      
     } else {
+
       current = current.next;
+
     }
+
   }
 
   return null;
 };
 
-// Hash Table( ver información en: https://es.wikipedia.org/wiki/Tabla_hash)
-// Una Hash table contiene un arreglo de "contenedores" o buckets donde puede guardar información.
-// Para este ejercicio, generar 35 buckets para la Hash Table, y realizar los métodos, get, hasKey
-// Para almacenar un valor asociado a una key (string):
-//    - Se pasa ese valor a la función hash(Pista: usar la función charCodeAt), que determina la posición en que debe ir en el arreglo. 
-//    - Luego el elemento se inserta(llamando al método set) en la posición(índice) devuelta. 
-// Para buscar el valor por su key:
-//    - Sólo habrá que pasarle a la función hash la clave del elemento a buscar y ésta determinará la posición 
-//      en que se encuentra.
-//    - Usar el número obtenido, para buscar(llamando al método get) el contenedor o bucket donde está el valor.
-//    - Retornar dicho valor.
+var linkedList = new LinkedList();
 
-function HashTable() {
-  
-}
+console.log("linkedList.add('one'): ");
+linkedList.add('one');
 
+console.log("linkedList.add('two'): ");
+linkedList.add('two');
 
-// No modifiquen nada debajo de esta linea
-// --------------------------------
+console.log("linkedList.add('three'): ");
+linkedList.add('three');
 
-module.exports = {
-  Node,
-  LinkedList,
-  HashTable
-};
+console.log("linkedList.add('four'): ");
+linkedList.add('four');
+
+console.log("linkedList.search('two')");
+console.log(linkedList.search('two'));
+
+console.log("linkedList.search('sdd')");
+console.log(linkedList.search('sdd'));
+
+console.log("linkedList.search('one')");
+console.log(linkedList.search('one'));
+
+console.log("linkedList.search('four')");
+console.log(linkedList.search('four'));
