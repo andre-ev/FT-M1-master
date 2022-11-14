@@ -41,31 +41,63 @@ LinkedList.prototype.add = function (arg) {
 LinkedList.prototype.remove = function () {
   let current = this.head;
 
+  if(!current) {
+    return current;
+  }
+
   while (current.next) {
 
     if(!current.next.next) {
-      let oldCurrent = current.next;
+      let valueDelNode = current.next.value;
       current.next = null;
       this.size--;
-      return oldCurrent.value;
+      return valueDelNode;
     }
 
     current = current.next;
   }
 
+  this.head = null;
   this.size--;
-  current = null;
-  return current;
+  return current.value;
 };
 
-LinkedList.prototype.search = function () {
-  
-};
 /*
+LinkedList.prototype.search = function (arg) {
+  let current = this.head;
+
+  if(!current) {
+    return null;
+  } 
+  
+  while (current.next) {
+
+    if (typeof arg === 'function') {
+      if (arg(current.value)) return current.value;
+    } else if (current.value === 'arg') {
+      return current.value;
+    } else {
+      current = current.next;
+    }
+
+  }
+
+  return null;
+};
+
 var linkedList = new LinkedList();
+
 linkedList.add('first');
 
 linkedList.add('second');
+
+linkedList.add('one');
+
+linkedList.add('two');
+
+linkedList.add('three');
+
+linkedList.add('four');
 
 linkedList.add('3');
 
