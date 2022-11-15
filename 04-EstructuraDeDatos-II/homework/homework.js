@@ -96,8 +96,12 @@ LinkedList.prototype.search = function (arg) {
 //    - Retornar dicho valor.
 
 function HashTable() {
+<<<<<<< HEAD
   this.numBuckets = 35;
   this.buckets = [];
+=======
+  
+>>>>>>> 4aadb7aa6169d0efbd540b4cb2d89b095a217bd2
 }
 
 HashTable.prototype.hash = function (key) {
