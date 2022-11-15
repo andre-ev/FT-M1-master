@@ -1,0 +1,9 @@
+{
+    "name": "Docker node",
+
+    "dockerFile": "Dockerfile",
+
+    "appPort": 3000,
+
+    "runArgs": ["--name", "FT-M1-master"]
+}
