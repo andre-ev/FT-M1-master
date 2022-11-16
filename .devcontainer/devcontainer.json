@@ -1,17 +1,9 @@
 {
-<<<<<<< HEAD
-    "name": "Docker node",
-=======
     "name": "FT-M1-MASTER",
->>>>>>> 4aadb7aa6169d0efbd540b4cb2d89b095a217bd2
 
     "dockerFile": "Dockerfile",
 
     "appPort": 3000,
 
-<<<<<<< HEAD
-    "runArgs": ["--name", "FT-M1-master"]
-=======
     "runArgs": ["--name", "FT-M1-MASTER"]
->>>>>>> 4aadb7aa6169d0efbd540b4cb2d89b095a217bd2
 }
