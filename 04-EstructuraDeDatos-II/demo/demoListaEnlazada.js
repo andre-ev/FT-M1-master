@@ -26,7 +26,6 @@ LinkedList.prototype.add = function (value) {
     this.size++;
 };
 
-
 var newList = new LinkedList();
 newList.add(5);
 console.log(newList);
